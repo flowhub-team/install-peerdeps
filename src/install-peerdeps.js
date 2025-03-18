@@ -42,7 +42,8 @@ const spawnCommand = (command, args) => {
     let stdout = "";
     let stderr = "";
     const cmdProcess = spawn(command + extra, args, {
-      cwd: process.cwd()
+      cwd: process.cwd(),
+      shell: true,
     });
     cmdProcess.stdout.on("data", chunk => {
       stdout += chunk;
